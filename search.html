@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ClothTube — Search</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">ClothTube</div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="search.html">Explore</a>
+    <a href="upload.html">Upload</a>
+    <a href="leaderboard.html">Leaderboard</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+  <div class="admin-area" id="admin-area"></div>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h2>Search</h2>
+    <form id="search-form" class="form">
+      <input name="q" placeholder="Search title, tags, creator..." />
+      <button type="submit">Search</button>
+    </form>
+    <div id="search-results" class="grid"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <small>© 2025 ClothTube</small>
+</footer>
+
+<script src="js/main.js"></script>
+<script>initApp(); setupSearch();</script>
+</body>
+</html>
