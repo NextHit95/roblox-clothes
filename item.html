@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ClothTube — Item</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">ClothTube</div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="search.html">Explore</a>
+    <a href="upload.html">Upload</a>
+    <a href="leaderboard.html">Leaderboard</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+  <div class="admin-area" id="admin-area"></div>
+</header>
+
+<main class="container item-page">
+  <section id="item-block" class="card"></section>
+
+  <aside class="sidebar card">
+    <h3>Similar Items</h3>
+    <div id="similar-list"></div>
+    <div class="ad-tall">[Sidebar Ad]</div>
+  </aside>
+</main>
+
+<footer class="footer">
+  <small>© 2025 ClothTube</small>
+</footer>
+
+<script src="js/main.js"></script>
+<script>initApp(); renderItemPage();</script>
+</body>
+</html>
