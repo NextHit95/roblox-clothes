@@ -1,46 +1,71 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>ClothTube — Upload</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header class="topbar">
-  <div class="brand">ClothTube</div>
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="search.html">Explore</a>
-    <a href="upload.html">Upload</a>
-    <a href="leaderboard.html">Leaderboard</a>
-    <a href="admin.html">Admin</a>
-  </nav>
-  <div class="admin-area" id="admin-area"></div>
-</header>
+<script>
+  // Local array to store cloths
+  let clothItems = [];
 
-<main class="container">
-  <section class="card">
-    <h2>Upload — Placeholder</h2>
-    <p>Creators paste their Roblox UGC Asset ID here and add metadata. This is a UI-only MVP — stored locally.</p>
+  const uploadForm = document.getElementById('upload-form');
 
-    <form id="upload-form" class="form">
-      <input name="id" placeholder="Item ID (Roblox asset ID)" required />
-      <input name="name" placeholder="Title" required />
-      <input name="creatorId" placeholder="Your Creator ID" required />
-      <input name="image" placeholder="Preview image URL (optional)" />
-      <button type="submit">Submit (local)</button>
-    </form>
+  uploadForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // prevent page refresh
 
-  </section>
-</main>
+    // Get values from form
+    const id = uploadForm.id.value.trim();
+    const name = uploadForm.name.value.trim();
+    const creatorId = uploadForm.creatorId.value.trim();
+    const image = uploadForm.image.value.trim() || "https://via.placeholder.com/150";
 
-<footer class="footer">
-  <small>© 2025 ClothTube</small>
-</footer>
+    // Simple validation
+    if(!id || !name || !creatorId) {
+      alert("Please fill in all required fields.");
+      return;
+    }
 
-<script src="js/main.js"></script>
-<script>initApp(); setupUploadForm();</script>
-   <script src="script.js"></script>
-</body>
-</html>
+    // Add new cloth object to local array
+    const newCloth = {
+      id,
+      title: name,
+      creatorId,
+      image,
+      likes: 0,
+      views: 0,
+      todayPick: false,
+      hidden: false,
+      createdAt: Date.now()
+    };
+
+    clothItems.push(newCloth);
+
+    // Clear form
+    uploadForm.reset();
+
+    alert("Cloth uploaded locally! Refresh will reset it unless saved to DB.");
+    console.log("Current cloth items:", clothItems);
+
+    // Optional: render a preview gallery
+    renderPreviewGallery();
+  });
+
+  function renderPreviewGallery() {
+    let gallery = document.getElementById('previewGallery');
+    if(!gallery){
+      gallery = document.createElement('div');
+      gallery.id = 'previewGallery';
+      gallery.className = 'gallery';
+      document.querySelector('main.container').appendChild(gallery);
+    }
+
+    // Clear existing gallery
+    gallery.innerHTML = '';
+
+    // Render all cloths
+    clothItems.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'item';
+      div.innerHTML = `
+        <img src="${item.image}" alt="${item.title}">
+        <p>${item.title}</p>
+        <small>Creator ID: ${item.creatorId}</small>
+      `;
+      gallery.appendChild(div);
+    });
+  }
+</script>
