@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ClothTube — Admin</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">ClothTube</div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="search.html">Explore</a>
+    <a href="upload.html">Upload</a>
+    <a href="leaderboard.html">Leaderboard</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+  <div class="admin-area" id="admin-area"></div>
+</header>
+
+<main class="container admin-page">
+  <section class="card">
+    <h2>Admin Login</h2>
+    <div id="admin-login-area"></div>
+  </section>
+
+  <section id="admin-dashboard" class="card" style="display:none;">
+    <h2>Admin Dashboard</h2>
+    <div class="admin-grid">
+      <div>
+        <h3>Today's Picks Editor</h3>
+        <div id="admin-todays-picks"></div>
+      </div>
+      <div>
+        <h3>Manage Items</h3>
+        <div id="admin-manage-items"></div>
+      </div>
+      <div>
+        <h3>Manage Creators</h3>
+        <div id="admin-manage-creators"></div>
+      </div>
+    </div>
+
+    <h3>Add New Item</h3>
+    <form id="admin-add-item" class="form">
+      <input name="id" placeholder="Item ID" required />
+      <input name="name" placeholder="Name" required />
+      <input name="creatorId" placeholder="Creator ID" required />
+      <input name="image" placeholder="Image URL (or leave blank)" />
+      <input name="createdAt" placeholder="YYYY-MM-DD" required />
+      <button type="submit">Add Item</button>
+    </form>
+
+  </section>
+</main>
+
+<footer class="footer">
+  <small>Admin — ClothTube</small>
+</footer>
+
+<script src="js/main.js"></script>
+<script>initApp(); renderAdminPage();</script>
+</body>
+</html>
