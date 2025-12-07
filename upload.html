@@ -11,36 +11,24 @@
   <div class="brand">ClothTube</div>
   <nav class="nav">
     <a href="index.html">Home</a>
-    <a href="search.html">Explore</a>
     <a href="upload.html">Upload</a>
-    <a href="leaderboard.html">Leaderboard</a>
     <a href="admin.html">Admin</a>
   </nav>
-  <div class="admin-area" id="admin-area"></div>
 </header>
 
 <main class="container">
   <section class="card">
-    <h2>Upload — Placeholder</h2>
-    <p>Creators paste their Roblox UGC Asset ID here and add metadata. This is a UI-only MVP — stored locally.</p>
-
-    <form id="upload-form" class="form">
-      <input name="id" placeholder="Item ID (Roblox asset ID)" required />
-      <input name="name" placeholder="Title" required />
-      <input name="creatorId" placeholder="Your Creator ID" required />
-      <input name="image" placeholder="Preview image URL (optional)" />
-      <button type="submit">Submit (local)</button>
+    <h2>Upload Your Cloth</h2>
+    <form id="uploadForm" class="form">
+      <input type="text" name="title" placeholder="Title" required />
+      <input type="file" name="image" id="image" accept="image/*" required />
+      <button type="submit">Upload</button>
     </form>
-
+    <div id="uploadPreview" class="grid"></div>
   </section>
 </main>
 
-<footer class="footer">
-  <small>© 2025 ClothTube</small>
-</footer>
-<script src="js/script.js"></script>
-
-<script src="js/main.js"></script>
-<script>initApp(); setupUploadForm();</script>
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/upload.js"></script>
 </body>
 </html>
