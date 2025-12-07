@@ -7,42 +7,41 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <header class="topbar">
   <div class="brand">ClothTube</div>
   <nav class="nav">
     <a href="index.html">Home</a>
-    <a href="search.html">Explore</a>
     <a href="upload.html">Upload</a>
-    <a href="leaderboard.html">Leaderboard</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html">Sign Up</a>
     <a href="admin.html">Admin</a>
   </nav>
-  <div class="admin-area" id="admin-area"></div>
+  <div id="user-area"></div>
 </header>
 
 <main class="container">
-  <section class="ad-banner">[Ad Banner]</section>
-
-  <section class="section">
-    <h2>Today’s Picks <small>(curated)</small></h2>
-    <div id="todays-picks" class="grid"></div>
+  <section class="section" id="todayPickSection">
+    <h2>Today's Picks</h2>
+    <div class="grid" id="todayPickGrid"></div>
   </section>
 
-  <section class="section">
+  <section class="section" id="trendingSection">
     <h2>Trending</h2>
-    <div id="trending" class="grid"></div>
+    <div class="grid" id="trendingGrid"></div>
   </section>
 
-  <section class="section">
+  <section class="section" id="newReleasesSection">
     <h2>New Releases</h2>
-    <div id="new-releases" class="grid"></div>
+    <div class="grid" id="newReleasesGrid"></div>
   </section>
 </main>
 
 <footer class="footer">
-  <small>© 2025 ClothTube — Free promo for Roblox creators</small>
+  <small>© 2025 ClothTube</small>
 </footer>
 
-<script src="js/main.js"></script>
-<script>initApp(); renderHome();</script>
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
