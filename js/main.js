@@ -1,3 +1,12 @@
+<script src="https://esm.sh/@supabase/supabase-js@2"></script>
+<script>
+const supabase = supabase.createClient(
+  "https://iigkeuxdshtssbdguhbm.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpZ2tldXhkc2h0c3NiZGd1aGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUyMDk4MTAsImV4cCI6MjA4MDc4NTgxMH0.9To1RY6hOLwqiBp8AMHsS58VCIm3KVh8Mm9"
+);
+</script>
+
+
 import { db, auth } from './auth.js';
 import { collection, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
