@@ -1,24 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>ClothTube — Admin Panel</title>
-<link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShirtHive — Admin</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://esm.sh/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">ClothTube</div>
+  <div class="brand">ShirtHive Admin</div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="search.html">Explore</a>
+    <a href="upload.html">Upload</a>
+    <a href="leaderboard.html">Leaderboard</a>
+  </nav>
 </header>
 
 <main class="container">
-  <section class="card">
-    <h2>Admin Dashboard</h2>
-    <div id="adminActions"></div>
-  </section>
+  <h1>Admin Dashboard</h1>
+  <div id="adminControls">
+    <p>Only admin users can see this panel.</p>
+    <div id="userList"></div>
+    <div id="shirtListAdmin"></div>
+  </div>
 </main>
 
-<script type="module" src="js/auth.js"></script>
-<script type="module" src="js/admin.js"></script>
+<footer class="footer">© 2025 ShirtHive</footer>
+<script type="module" src="main.js"></script>
 </body>
 </html>
