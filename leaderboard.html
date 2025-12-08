@@ -1,36 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>ClothTube — Leaderboard</title>
-<link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShirtHive — Leaderboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://esm.sh/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">ClothTube</div>
+  <div class="brand">ShirtHive</div>
   <nav class="nav">
     <a href="index.html">Home</a>
     <a href="search.html">Explore</a>
     <a href="upload.html">Upload</a>
-    <a href="leaderboard.html">Leaderboard</a>
-    <a href="admin.html">Admin</a>
   </nav>
-  <div class="admin-area" id="admin-area"></div>
 </header>
 
 <main class="container">
-  <section class="card">
-    <h2>Top Creators</h2>
-    <div id="leaderboard" class="grid"></div>
-  </section>
+  <h1>Top Creators</h1>
+  <div id="leaderboardList"></div>
 </main>
 
-<footer class="footer">
-  <small>© 2025 ClothTube</small>
-</footer>
-
-<script src="js/main.js"></script>
-<script>initApp(); renderLeaderboard();</script>
+<footer class="footer">© 2025 ShirtHive</footer>
+<script type="module" src="main.js"></script>
 </body>
 </html>
